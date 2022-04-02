@@ -4,7 +4,7 @@ import GameState from "core-web-engine/models/GameState"
 
 const container= document.querySelector('.game-container')
 
-const gameLoader= new GameLoader({root:"db_files.json"})
+const gameLoader= new GameLoader({root:"db_files"})
 
 const gameState= new GameState({});
 
