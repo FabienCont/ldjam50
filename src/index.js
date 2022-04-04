@@ -10,10 +10,17 @@ const gameState= new GameState({});
 const gameLoader= new GameLoader({root:"db_files"})
 
 const loadLevel=function(){
+    let elem= document.querySelector(".splashScreen")
+    elem.style.display=null;
     gameLoader.load(gameState).then((game)=>{
-        console.log(game)
-        const engine = new gameEngine({container,level:game.level,gameState:game.state,loadLevel})
-        window._game_engine=engine;
+    
+        setTimeout(() => {
+            let elem= document.querySelector(".splashScreen")
+            elem.style.display="none";
+            const engine = new gameEngine({container,level:game.level,gameState:game.state,loadLevel})
+            window._game_engine=engine;
+        }, 2000);
+      
     
     }).catch((err)=>{
     
