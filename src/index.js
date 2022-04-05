@@ -1,6 +1,7 @@
 import gameEngine from "game-engine"
 import GameLoader from "core-web-engine/loaders/GameLoader"
 import GameState from "core-web-engine/models/GameState"
+import musicDeJeu from "./musicDeJeu.mp3"
 
 const container= document.querySelector('.game-container')
 
@@ -12,8 +13,8 @@ const gameLoader= new GameLoader({root:"db_files"})
 const loadLevel=function(){
     let elem= document.querySelector(".splashScreen")
     elem.style.display=null;
+    gameState.soundCommands.push({src:musicDeJeu,loop:true})
     gameLoader.load(gameState).then((game)=>{
-    
         setTimeout(() => {
             let elem= document.querySelector(".splashScreen")
             elem.style.display="none";
